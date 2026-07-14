@@ -39,7 +39,9 @@ html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
   color: var(--ink-900);
-  background: var(--paper-50);
+  background:
+    radial-gradient(circle at top left, rgba(201, 150, 44, 0.16), transparent 28%),
+    var(--paper-50);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -61,6 +63,59 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; color: var(--na
   padding-left: 24px;
   padding-right: 24px;
 }
+
+/* =========================================================
+   UTILITY / FLOATING
+========================================================= */
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 3px;
+  z-index: 100;
+  pointer-events: none;
+}
+.scroll-progress span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-500), var(--steel-600));
+}
+.floating-wa,
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  z-index: 60;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 12px 24px -14px rgba(11,22,34,0.45);
+}
+.floating-wa {
+  bottom: 92px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  font-size: 1.45rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.floating-wa:hover,
+.back-to-top:hover { transform: translateY(-2px); }
+.back-to-top {
+  bottom: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--navy-950);
+  color: var(--paper-50);
+  font-size: 1.1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.back-to-top.is-visible { opacity: 1; pointer-events: auto; }
 
 /* =========================================================
    BUTTONS
@@ -186,6 +241,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; color: var(--na
 @media (max-width: 860px) {
   .nav__links { display: none; }
   .nav__burger { display: flex; }
+  .nav__inner { height: 62px; }
 }
 
 /* =========================================================
@@ -337,14 +393,26 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; color: var(--na
 }
 
 @media (max-width: 860px) {
-  .hero__inner { grid-template-columns: 1fr; }
+  .hero__inner { grid-template-columns: 1fr; gap: 36px; }
   .dossier { max-width: 420px; }
+  .hero { padding: 70px 0 78px; }
+}
+
+@media (max-width: 560px) {
+  .hero__cta { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; }
+  .hero__pitch { font-size: 0.98rem; }
 }
 
 /* =========================================================
    SECTIONS (shared)
 ========================================================= */
 .section { padding: 96px 0; border-bottom: 1px solid var(--line); }
+.section__inner { position: relative; }
+
+@media (max-width: 640px) {
+  .section { padding: 72px 0; }
+}
 .skills, .path { background: var(--paper-100); }
 .section__head {
   display: flex;
@@ -409,7 +477,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; color: var(--na
   opacity: 0.85;
 }
 @media (max-width: 780px) {
-  .about__grid { grid-template-columns: 1fr; }
+  .about__grid { grid-template-columns: 1fr; gap: 24px; }
 }
 
 /* =========================================================
@@ -586,6 +654,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; color: var(--na
 
 @media (max-width: 640px) {
   .contact__grid { grid-template-columns: 1fr; }
+  .contact__card { padding: 18px; }
 }
 
 /* =========================================================
@@ -607,3 +676,22 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; color: var(--na
 ========================================================= */
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero__copy .eyebrow,
+  .hero__copy .hero__name,
+  .hero__copy .hero__role,
+  .hero__copy .hero__pitch,
+  .hero__copy .hero__cta {
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero__copy .hero__role { animation-delay: 0.08s; }
+  .hero__copy .hero__pitch { animation-delay: 0.16s; }
+  .hero__copy .hero__cta { animation-delay: 0.24s; }
+  .dossier { animation: fadeUp 0.9s ease both; animation-delay: 0.12s; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}

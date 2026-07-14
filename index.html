@@ -11,6 +11,11 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgressBar"></span></div>
+<a class="floating-wa" href="https://wa.me/237696675924?text=Bonjour%20Celestin%2C%20je%20viens%20de%20voir%20ton%20portfolio%20et%20je%20souhaite%20discuter%20avec%20toi." target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp">
+  <span>💬</span>
+</a>
+<button class="back-to-top" id="backToTop" type="button" aria-label="Retour en haut">↑</button>
 
 <!-- ============ NAV ============ -->
 <header class="nav" id="top">
@@ -60,6 +65,7 @@
         </p>
         <div class="hero__cta">
           <a href="#projects" class="btn btn--primary" data-i18n="hero.ctaProjects">Voir mes projets</a>
+          <a href="https://wa.me/237696675924?text=Bonjour%20Celestin%2C%20je%20viens%20de%20voir%20ton%20portfolio%20et%20je%20souhaite%20discuter%20avec%20toi." class="btn btn--ghost" target="_blank" rel="noopener" data-i18n="hero.ctaWhatsapp">Écrire sur WhatsApp</a>
           <a href="assets/docs/CV_Celestin_Nangmo.pdf" class="btn btn--ghost" download data-i18n="hero.ctaCv">Télécharger le CV</a>
         </div>
       </div>
@@ -277,12 +283,12 @@
             <span class="contact__value">celestinnangmo9@gmail.com</span>
           </span>
         </a>
-        <a class="contact__card" href="tel:+237696675924">
+        <a class="contact__card" href="https://wa.me/237696675924?text=Bonjour%20Celestin%2C%20je%20viens%20de%20voir%20ton%20portfolio%20et%20je%20souhaite%20discuter%20avec%20toi." target="_blank" rel="noopener">
           <span class="contact__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.8 21 3 13.2 3 3.9c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1L6.6 10.8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
           </span>
           <span>
-            <span class="contact__label" data-i18n="contact.phone">Téléphone</span>
+            <span class="contact__label" data-i18n="contact.whatsapp">WhatsApp</span>
             <span class="contact__value">+237 696 675 924</span>
           </span>
         </a>
@@ -311,7 +317,7 @@
 
 <footer class="footer">
   <div class="footer__inner">
-    <span>© 2026 Nangmo Nguemo Celestin Ange</span>
+    <span>© <span id="year"></span> Nangmo Nguemo Celestin Ange</span>
     <span class="footer__built" data-i18n="footer.built">Construit avec HTML, CSS &amp; JavaScript</span>
   </div>
 </footer>

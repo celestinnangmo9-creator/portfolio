@@ -13,6 +13,7 @@ const translations = {
     'hero.role': 'Étudiant en Software Engineering (HND)',
     'hero.pitch': "Je conçois des applications web pensées pour des besoins concrets et locaux — livraison, réservation, gestion — avec la rigueur d'un ingénieur logiciel en formation.",
     'hero.ctaProjects': 'Voir mes projets',
+    'hero.ctaWhatsapp': 'Écrire sur WhatsApp',
     'hero.ctaCv': 'Télécharger le CV',
 
     'dossier.tag': 'FICHE — 01',
@@ -52,7 +53,7 @@ const translations = {
     'contact.title': 'Contact',
     'contact.lede': "Ouvert aux opportunités de stage et aux collaborations. N'hésitez pas à me contacter.",
     'contact.email': 'Email',
-    'contact.phone': 'Téléphone',
+    'contact.whatsapp': 'WhatsApp',
     'contact.githubValue': 'Lien à venir',
     'contact.location': 'Localisation',
 
@@ -69,6 +70,7 @@ const translations = {
     'hero.role': 'Software Engineering Student (HND)',
     'hero.pitch': "I build web applications designed around real, local needs — delivery, booking, management — with the discipline of a software engineer in training.",
     'hero.ctaProjects': 'View my projects',
+    'hero.ctaWhatsapp': 'Write on WhatsApp',
     'hero.ctaCv': 'Download CV',
 
     'dossier.tag': 'FILE — 01',
@@ -108,7 +110,7 @@ const translations = {
     'contact.title': 'Contact',
     'contact.lede': "Open to internship opportunities and collaborations. Feel free to reach out.",
     'contact.email': 'Email',
-    'contact.phone': 'Phone',
+    'contact.whatsapp': 'WhatsApp',
     'contact.githubValue': 'Link coming soon',
     'contact.location': 'Location',
 
@@ -185,10 +187,70 @@ function initReveal() {
 }
 
 /* =========================================================
+   SCROLL FEEDBACK
+========================================================= */
+function initScrollFeedback() {
+  const progressBar = document.getElementById('scrollProgressBar');
+  const backToTop = document.getElementById('backToTop');
+  const year = document.getElementById('year');
+
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
+
+  const updateProgress = () => {
+    const scrollTop = window.scrollY;
+    const height = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = height > 0 ? (scrollTop / height) * 100 : 0;
+
+    if (progressBar) {
+      progressBar.style.width = `${Math.min(progress, 100)}%`;
+    }
+
+    if (backToTop) {
+      backToTop.classList.toggle('is-visible', scrollTop > 480);
+    }
+  };
+
+  updateProgress();
+  window.addEventListener('scroll', updateProgress, { passive: true });
+
+  if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+}
+
+function initSectionHighlight() {
+  const links = Array.from(document.querySelectorAll('.nav__links a, .nav__mobile a'));
+  const sections = links
+    .map(link => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+  if (!sections.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = `#${entry.target.id}`;
+        links.forEach(link => {
+          link.classList.toggle('is-active', link.getAttribute('href') === id);
+        });
+      }
+    });
+  }, { threshold: 0.35 });
+
+  sections.forEach(section => observer.observe(section));
+}
+
+/* =========================================================
    INIT
 ========================================================= */
 document.addEventListener('DOMContentLoaded', () => {
   initLangToggle();
   initMobileNav();
   initReveal();
+  initScrollFeedback();
+  initSectionHighlight();
 });
