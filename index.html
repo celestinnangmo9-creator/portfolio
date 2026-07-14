@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nangmo Nguemo Celestin Ange — Software Engineering Student</title>
+<meta name="description" content="Portfolio de Nangmo Nguemo Celestin Ange, étudiant en HND Software Engineering, Yaoundé, Cameroun.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="top">
+  <div class="nav__inner">
+    <a href="#top" class="nav__mark">
+      <span class="nav__mark-bracket">&lt;</span>NNCA<span class="nav__mark-bracket">/&gt;</span>
+    </a>
+    <nav class="nav__links" aria-label="Navigation principale">
+      <a href="#about" data-i18n="nav.about">À propos</a>
+      <a href="#skills" data-i18n="nav.skills">Compétences</a>
+      <a href="#projects" data-i18n="nav.projects">Projets</a>
+      <a href="#path" data-i18n="nav.path">Parcours</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="lang-toggle" id="langToggle" aria-label="Changer la langue">
+        <span class="lang-toggle__opt is-active" data-lang="fr">FR</span>
+        <span class="lang-toggle__sep">/</span>
+        <span class="lang-toggle__opt" data-lang="en">EN</span>
+      </button>
+      <button class="nav__burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav class="nav__mobile" id="navMobile" aria-label="Navigation mobile">
+    <a href="#about" data-i18n="nav.about">À propos</a>
+    <a href="#skills" data-i18n="nav.skills">Compétences</a>
+    <a href="#projects" data-i18n="nav.projects">Projets</a>
+    <a href="#path" data-i18n="nav.path">Parcours</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero__grid" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Dossier professionnel</p>
+        <h1 class="hero__name">Nangmo&nbsp;Nguemo<br>Celestin&nbsp;Ange</h1>
+        <p class="hero__role" data-i18n="hero.role">Étudiant en Software Engineering (HND)</p>
+        <p class="hero__pitch" data-i18n="hero.pitch">
+          Je conçois des applications web pensées pour des besoins concrets et locaux —
+          livraison, réservation, gestion — avec la rigueur d'un ingénieur logiciel en formation.
+        </p>
+        <div class="hero__cta">
+          <a href="#projects" class="btn btn--primary" data-i18n="hero.ctaProjects">Voir mes projets</a>
+          <a href="assets/docs/CV_Celestin_Nangmo.pdf" class="btn btn--ghost" download data-i18n="hero.ctaCv">Télécharger le CV</a>
+        </div>
+      </div>
+
+      <div class="dossier" role="group" aria-label="Fiche dossier">
+        <div class="dossier__head">
+          <span class="dossier__tag" data-i18n="dossier.tag">FICHE — 01</span>
+        </div>
+        <div class="dossier__photo">
+          <img src="assets/img/celestin.jpg" alt="Photo de Nangmo Nguemo Celestin Ange">
+        </div>
+        <dl class="dossier__fields">
+          <div class="dossier__field">
+            <dt data-i18n="dossier.name">Nom</dt>
+            <dd>Nangmo Nguemo Celestin Ange</dd>
+          </div>
+          <div class="dossier__field">
+            <dt data-i18n="dossier.location">Localisation</dt>
+            <dd>Yaoundé, Cameroun</dd>
+          </div>
+          <div class="dossier__field">
+            <dt data-i18n="dossier.formation">Formation</dt>
+            <dd>HND Software Engineering — IUES</dd>
+          </div>
+          <div class="dossier__field">
+            <dt data-i18n="dossier.internship">Stage actuel</dt>
+            <dd>Digital by Wasilink</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section about" id="about">
+    <div class="section__inner">
+      <div class="section__head">
+        <span class="section__index">§01</span>
+        <h2 data-i18n="about.title">À propos</h2>
+      </div>
+      <div class="about__grid">
+        <p class="about__text" data-i18n="about.text">
+          Étudiant en Software Engineering, je pose actuellement les bases solides de mon parcours
+          d'ingénieur logiciel. Je suis en formation continue sur Django, Laravel et PHP, et
+          j'apprends en construisant : chacun de mes projets personnels reproduit un besoin réel
+          du contexte camerounais — livraison de repas, livraison de gaz, réservation de salles —
+          avec une attention particulière à l'expérience utilisateur, à la structure du code et
+          aux moyens de paiement locaux (Orange Money, MTN MoMo).
+        </p>
+        <ul class="about__stats">
+          <li>
+            <span class="about__stat-value">3</span>
+            <span class="about__stat-label" data-i18n="about.stat1">applications web construites</span>
+          </li>
+          <li>
+            <span class="about__stat-value">2026</span>
+            <span class="about__stat-label" data-i18n="about.stat2">stage académique en cours</span>
+          </li>
+          <li>
+            <span class="about__stat-value">FR/EN</span>
+            <span class="about__stat-label" data-i18n="about.stat3">interfaces bilingues</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section skills" id="skills">
+    <div class="section__inner">
+      <div class="section__head">
+        <span class="section__index">§02</span>
+        <h2 data-i18n="skills.title">Compétences</h2>
+      </div>
+      <div class="skills__cols">
+        <div class="skills__col">
+          <h3 data-i18n="skills.core">Langages &amp; base</h3>
+          <div class="chips">
+            <span class="chip">HTML5</span>
+            <span class="chip">CSS3</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">PHP (OOP / PDO)</span>
+            <span class="chip">MySQL</span>
+          </div>
+        </div>
+        <div class="skills__col">
+          <h3 data-i18n="skills.tools">Frameworks &amp; outils</h3>
+          <div class="chips">
+            <span class="chip">Tailwind CSS</span>
+            <span class="chip">Git</span>
+            <span class="chip">Font Awesome</span>
+            <span class="chip">XAMPP</span>
+          </div>
+        </div>
+        <div class="skills__col">
+          <h3 data-i18n="skills.learning">En apprentissage</h3>
+          <div class="chips">
+            <span class="chip chip--learning">Django</span>
+            <span class="chip chip--learning">Laravel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section projects" id="projects">
+    <div class="section__inner">
+      <div class="section__head">
+        <span class="section__index">§03</span>
+        <h2 data-i18n="projects.title">Projets</h2>
+      </div>
+
+      <article class="project">
+        <div class="project__num">01</div>
+        <div class="project__body">
+          <h3 data-i18n="proj1.title">Location d'espaces événementiels</h3>
+          <p class="project__tag" data-i18n="proj1.tag">Projet de fin d'études — en cours</p>
+          <p data-i18n="proj1.desc">
+            Plateforme web permettant de rechercher, comparer et réserver des salles de fête
+            et des espaces verts pour des événements. Gestion des disponibilités, des
+            profils propriétaires et du parcours de réservation de bout en bout.
+          </p>
+          <div class="chips chips--mono">
+            <span class="chip">PHP</span>
+            <span class="chip">Laravel</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">UML</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project__num">02</div>
+        <div class="project__body">
+          <h3>GazLivré</h3>
+          <p class="project__tag" data-i18n="proj2.tag">Application de livraison de gaz</p>
+          <p data-i18n="proj2.desc">
+            Application de livraison de bouteilles de gaz avec authentification multi-rôles
+            (client, vendeur, livreur, admin), moteur de tarification basé sur la formule de
+            Haversine et cycle de vie complet des commandes.
+          </p>
+          <div class="chips chips--mono">
+            <span class="chip">PHP (OOP/PDO)</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">JavaScript ES6+</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project__num">03</div>
+        <div class="project__body">
+          <h3 data-i18n="proj3.title">Manger Facilement Chez Vous</h3>
+          <p class="project__tag" data-i18n="proj3.tag">Application de livraison de repas</p>
+          <p data-i18n="proj3.desc">
+            Application de commande et livraison de repas avec panier, suivi de commande,
+            portail partenaire restaurant et paiement mobile money, en interface bilingue
+            français / anglais.
+          </p>
+          <div class="chips chips--mono">
+            <span class="chip">JavaScript</span>
+            <span class="chip">Tailwind CSS</span>
+            <span class="chip">Orange Money</span>
+            <span class="chip">MTN MoMo</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PATH (education + experience) ============ -->
+  <section class="section path" id="path">
+    <div class="section__inner">
+      <div class="section__head">
+        <span class="section__index">§04</span>
+        <h2 data-i18n="path.title">Parcours</h2>
+      </div>
+      <ol class="timeline">
+        <li class="timeline__item">
+          <span class="timeline__date">2026</span>
+          <div class="timeline__content">
+            <h3 data-i18n="path.item1.title">Stage académique — Digital by Wasilink</h3>
+            <p data-i18n="path.item1.desc">Construction d'applications web, juin – août 2026.</p>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__date" data-i18n="path.item2.date">En cours</span>
+          <div class="timeline__content">
+            <h3 data-i18n="path.item2.title">HND Software Engineering</h3>
+            <p>Institut Universitaire et Stratégique de l'Estuaire (IUES)</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section contact" id="contact">
+    <div class="section__inner">
+      <div class="section__head">
+        <span class="section__index">§05</span>
+        <h2 data-i18n="contact.title">Contact</h2>
+      </div>
+      <p class="contact__lede" data-i18n="contact.lede">
+        Ouvert aux opportunités de stage et aux collaborations. N'hésitez pas à me contacter.
+      </p>
+      <div class="contact__grid">
+        <a class="contact__card" href="mailto:celestinnangmo9@gmail.com">
+          <span class="contact__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M3 6.5 12 13l9-6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/></svg>
+          </span>
+          <span>
+            <span class="contact__label" data-i18n="contact.email">Email</span>
+            <span class="contact__value">celestinnangmo9@gmail.com</span>
+          </span>
+        </a>
+        <a class="contact__card" href="tel:+237696675924">
+          <span class="contact__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.8 21 3 13.2 3 3.9c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1L6.6 10.8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </span>
+          <span>
+            <span class="contact__label" data-i18n="contact.phone">Téléphone</span>
+            <span class="contact__value">+237 696 675 924</span>
+          </span>
+        </a>
+        <a class="contact__card" href="https://github.com/" target="_blank" rel="noopener">
+          <span class="contact__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.93.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-1.99 1.03-2.7-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.6 9.6 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.71 1.03 1.6 1.03 2.7 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .26.18.58.69.48A10 10 0 0 0 12 2Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          </span>
+          <span>
+            <span class="contact__label">GitHub</span>
+            <span class="contact__value" data-i18n="contact.githubValue">Lien à venir</span>
+          </span>
+        </a>
+        <a class="contact__card contact__card--muted" href="#">
+          <span class="contact__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 21c4.97-4.03 8-7.86 8-11.6A8 8 0 0 0 4 9.4C4 13.14 7.03 16.97 12 21Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9.4" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+          </span>
+          <span>
+            <span class="contact__label" data-i18n="contact.location">Localisation</span>
+            <span class="contact__value">Yaoundé, Cameroun</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <span>© 2026 Nangmo Nguemo Celestin Ange</span>
+    <span class="footer__built" data-i18n="footer.built">Construit avec HTML, CSS &amp; JavaScript</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
